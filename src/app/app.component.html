@@ -2,7 +2,7 @@
   <div class="nav-container">
       <ul>
           <!-- <li ><a href="Home">Home</a></li>localhost:4200/Home -->
-          <!-- <li [routerLinkActive]="'active'"><a routerLink="Home">Home</a></li>localhost:4200/Home -->
+          <li [routerLinkActive]="'active'"><a routerLink="Home">Home</a></li>
 
           <!-- Now we are not reloading/restarting the app!
           That is because routerLink catches the clik on the element(prevent
@@ -11,35 +11,40 @@
           checks if there is fitting route in our configuration -->
 
           <!-- <li ><a href="About">About</a></li>localhost:4200/About -->
-          <!-- <li [routerLinkActive]="'active'"><a [routerLink]="'/About'">About</a></li>localhost:4200/About -->
+          <li [routerLinkActive]="'active'"><a [routerLink]="'/About'">About</a></li>
           <!-- When we use / before a path it uses ABSOLUTE path,that means
           that path gets appended to root url,no matter which route is the active route!
           If we din't use / ,it uses RELATICE path amd it's gets appended to the
           current active route -->
 
           <!-- <li ><a href="Contact">Contact</a></li>localhost:4200/Contact -->
-          <!-- <li [routerLinkActive]="'active'"><a [routerLink]="['Contact']">Contact</a></li>localhost:4200/Contact -->
+          <li [routerLinkActive]="'active'"><a [routerLink]="['Contact']">Contact</a></li>
             <!-- This [routerLinkActive]="'active'" is a directive for adding or removing classes from
             an html element tha is bound to [routerLink]="['Contact']" -->
             <!-- The main idea is to highlight which route is currently ative -->
 
-          <!-- <li [routerLinkActive]="'active'"><a routerLink="/Courses">Courses</a></li>localhost:4200/Courses -->
+          <li [routerLinkActive]="'active'"><a routerLink="/Courses">Courses</a></li>
 
 
-          <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}"><a routerLink="" fragment="Home">Home</a></li><!-- localhost:4200/Home -->
-          <li [routerLinkActive]="'active'"><a routerLink="" fragment="About">About</a></li><!-- localhost:4200/About -->
-          <li [routerLinkActive]="'active'"><a routerLink="" fragment="Contact">Contact</a></li><!-- localhost:4200/Contact -->
-          <li [routerLinkActive]="'active'"><a routerLink="" fragment="Courses">Courses</a></li><!-- localhost:4200/Courses -->
+          <!-- <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}"><a routerLink="" fragment="Home">Home</a></li>
+          <li [routerLinkActive]="'active'"><a routerLink="" fragment="About">About</a></li>
+          <li [routerLinkActive]="'active'"><a routerLink="" fragment="Contact">Contact</a></li>
+          <li [routerLinkActive]="'active'"><a routerLink="" fragment="Courses">Courses</a></li>localhost:4200/Courses -->
           <!-- We passed an Fragment to a Route using this fregment directive: fragment="Home" -->
+
+          <span style="float: right">
+            <li (click)="login()"><a>Login</a></li>
+            <li (click)="logout()"><a>Logout</a></li>
+          </span>
 
       </ul>
   </div>
   <div class="component-container">
-      <app-home id="Home"></app-home>
+      <!-- <app-home id="Home"></app-home>
       <app-about id="About"></app-about>
       <app-contact id="Contact"></app-contact>
-      <app-courses id="Courses"></app-courses>
+      <app-courses id="Courses"></app-courses> -->
       <!-- <router-outlet></router-outlet> -->
-      <!-- <router-outlet></router-outlet> -->
+      <router-outlet></router-outlet>
   </div>
 </div>

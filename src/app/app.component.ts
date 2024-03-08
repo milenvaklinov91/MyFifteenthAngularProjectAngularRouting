@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AppComponent implements OnInit{
   title = 'MyFifteenthAngularProjectAngularRouting';
 
-  constructor(private activatedRoute: ActivatedRoute){}
+  constructor(private activatedRoute: ActivatedRoute, private authService: AuthService){}
 
   //to retrive the value of a fragment we need an instance of the active route class
   //that is why we neee constructor
@@ -26,6 +27,14 @@ export class AppComponent implements OnInit{
     document.getElementById(section)?.scrollIntoView({behavior: 'smooth'});
   }
   //This is the use of fragment
+
+  login(){
+    this.authService.login()
+  }
+
+  logout(){
+    this.authService.logout()
+  }
 }
 
 // <!-- How to retrive the value of a fragment -->
