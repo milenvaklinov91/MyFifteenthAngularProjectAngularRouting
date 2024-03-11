@@ -14,7 +14,7 @@ export class CourseComponent implements OnInit,OnDestroy {
   //Injected CoursesService
 
   //! <-- ???
-  course!: any;
+  course: any;
   //courseId!: number;
   courseId!: any;
   //if I want to use new Approach
